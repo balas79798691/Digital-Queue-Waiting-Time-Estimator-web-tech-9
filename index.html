@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Queue Waiting-Time Estimator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Digital Queue Waiting-Time Estimator</h1>
+<p>Estimate waiting time before joining a service queue.</p>
+</header>
+
+<main>
+<section class="card">
+<h2>Queue Details</h2>
+<div class="form">
+<label>Current Token <input id="current" type="number" min="1" value="47"></label>
+<label>Your Token <input id="mine" type="number" min="1" value="58"></label>
+<label>Average Service Time (minutes) <input id="service" type="number" min="1" value="3"></label>
+<label>Active Counters <input id="counters" type="number" min="1" value="1"></label>
+</div>
+<button id="calculate">Estimate Waiting Time</button>
+</section>
+
+<section id="result" class="result">
+<h2>Estimated Waiting Time</h2>
+<p id="minutes">—</p>
+<p id="message">Enter queue details to calculate.</p>
+</section>
+
+<section class="card">
+<h2>How It Works</h2>
+<p>The estimator calculates the number of people ahead and divides the expected service workload across active counters.</p>
+<p><strong>Formula:</strong> Waiting Time ≈ People Ahead × Average Service Time ÷ Active Counters</p>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
